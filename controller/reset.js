@@ -36,7 +36,7 @@ const forgethome=async(req,res)=>{res.render("home")}
     id:user.id 
   } 
   const token = jwt.sign(payload,secure,{expiresIn:'5m'});
-  const link=`http://frontendreset.app/reset-pass/${user._id}/${token}`
+  const link=`http://frontendresetapp/reset-pass/${user._id}/${token}`
     console.log(link)
 
     const email=user.email
