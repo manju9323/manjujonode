@@ -66,6 +66,33 @@ catch(err){
 
 }
 
+//update
+update=async(req,res)=>{
+    try{
+    
+       let mm =await userfin.findByIdAndUpdate(req.user._id,{$set:req.body},{new:true});
+       res.status(200).json(mm)
+    }
+    catch(err){
+        return res.status(400).json({
+            err:"user with that mail does not exist"
+        });
+    }
+    
+    }
+//find
+find=async(req,res)=>{
+    try{
+    
+       let mm =await userfin.findOne({_id:req.user._id});
+       res.status(200).json(mm)
+    }
+    catch(err){
+        return res.status(400).json({
+            err:"user with that mail does not exist"
+        });
+    }
+    }
 
 
 /*
@@ -110,4 +137,4 @@ res.cookie("access_token",token,{httpOnly:true}).status(200).send({otherDetails}
 
 
 
-module.exports={register,login,logout}
+module.exports={register,login,logout,update,find}

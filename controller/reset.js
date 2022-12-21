@@ -36,11 +36,11 @@ const forgethome=async(req,res)=>{res.render("home")}
     id:user.id 
   } 
   const token = jwt.sign(payload,secure,{expiresIn:'5m'});
-  const link=`https://frontendresetapp.netlify.app/reset-pass/${user._id}/${token}`
+  const link=`https://manjujob.netlify.app/reset-pass/${user._id}/${token}`
     console.log(link)
 
     const email=user.email
-    const subject="reset link is here"
+    const subject="click here to reset password, link is here"
     const message=link
    
     const newcompose= new Composeemail({
@@ -140,7 +140,7 @@ try{
     const mm={password:`${hash+""}`}
   console.log(mm)
     await userfin.findByIdAndUpdate(load.id,{$set:mm},{new:true}); 
-   res.send("sucessfull set password")
+   res.send("sucessfull reset password")
 
   }) 
 }

@@ -18,6 +18,21 @@ const userschema=new mongoose.Schema({
         type:Boolean, 
         default:false  
     }, 
+    age:{
+        type:String,
+    }, 
+    gender:{
+        type:String,
+    }, 
+    dob:{
+        type:String,
+    }, 
+    mobile:{
+        type:String, 
+    }, 
+    about:{
+        type:String, 
+    }
    
 },
 {timestamps:true});

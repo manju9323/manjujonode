@@ -9,4 +9,4 @@ router.post("/forget-pass",forgetpass)
 router.get("/reset-pass/:id/:token",resethome)
 router.post("/reset-pass/:id/:token",confirmreset)
 
-module.exports=router  
+module.exports=router      
